@@ -11,7 +11,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <!-- test -->
+  <!-- test 1 -->
   <HelloWorld msg="Vite + Vue" />
 </template>
 
