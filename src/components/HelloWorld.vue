@@ -26,9 +26,9 @@ function initial() {
     <n-layout>
       <n-layout-header bordered style="background-color: none;">
         <n-space justify="end" size="large">
-          <a href="" style="align-items: right;">Page 1</a>
-          <a href="" style="align-items: right;">Page 2</a>
-          <a href="" style="align-items: right;">Page 3</a>
+          <a href="">Page 1</a>
+          <a href="">Page 2</a>
+          <a href="">Page 3</a>
         </n-space>
       </n-layout-header>
       <n-layout-content style="background-color: none;">
@@ -36,7 +36,7 @@ function initial() {
         <!-- 介绍 -->
         <n-flex :align="'center'" :justify="'space-between'">
           <div :style="'font-size: 48px'">Name</div>
-          <div>Slogan</div>
+          <n-gradient-text style="color:blueviolet">你好啊</n-gradient-text>
         </n-flex>
         <n-grid>
           <n-gi :span="8">
