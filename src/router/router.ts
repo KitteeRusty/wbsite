@@ -17,7 +17,14 @@ const routes: Array<RouteRecordRaw> = [
             {
                 path: "project",
                 name: "website-layout-project",
-                component: () => import('../components/project/project.vue')
+                component: () => import('../components/project/project.vue'),
+                children: [
+                    {
+                        path: "fire-escape",
+                        name: "project-algorithms-fireEscape",
+                        component: () => import('../components/project/algorithms/fireEscape.vue')
+                    },
+                ]
             },
             {
                 path: "about",

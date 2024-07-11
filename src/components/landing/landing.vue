@@ -6,8 +6,13 @@ import {
   NGrid, NGi,
   NLayout, NLayoutHeader, NLayoutContent, NLayoutSider,
   NSplit,
-  NTimeline, NTimelineItem, NGradientText, NEllipsis, NDivider, NCarousel
+  NText,
+  NTimeline,
+  NTimelineItem,
+  NGradientText, NEllipsis, NDivider, NCarousel
 } from 'naive-ui';
+import router from '../../router/router';
+import { projects } from '../project/project';
 
 const contentRef = ref<string | null>(null);
 
@@ -50,6 +55,22 @@ function initial() {
         </n-flex>
       </n-gi>
     </n-grid>
+    <div>
+      <div style="font-size: 24px; margin: 12px 0"><b>Projects that I have worked on</b></div>
+      <n-grid :cols="2">
+        <n-gi v-for="project in projects">
+          <div class="projectsCard" @click="router.push({ name: project.routerKey })">
+            <!-- :style="{ backgroundColor: project.color }" -->
+            <div style="font-size: 18px"><b>{{ project.name }}</b></div>
+            <div>
+              <n-text :depth="3">
+                {{ project.description }}
+              </n-text>
+            </div>
+          </div>
+        </n-gi>
+      </n-grid>
+    </div>
     <!-- 第一个部分 -->
     <!-- <n-divider title-placement="left" style="font-size:30px; font-weight: bold;">
       Part 1
@@ -85,24 +106,24 @@ function initial() {
       <template #1>
         1
       </template>
-      <template #2>
+<template #2>
         <n-split direction="vertical" style="height: 200px">
           <template #1>
             2
           </template>
-          <template #2>
+<template #2>
             <n-split direction="horizontal" style="height: 100%">
               <template #1>
                 3
               </template>
-              <template #2>
+<template #2>
                 more
               </template>
-            </n-split>
-          </template>
-        </n-split>
-      </template>
-    </n-split> -->
+</n-split>
+</template>
+</n-split>
+</template>
+</n-split> -->
     <!--第三个部分 -->
     <!-- <n-divider title-placement="left" style="font-size:30px; font-weight: bold;">
       Part 3
@@ -150,6 +171,7 @@ function initial() {
 .light-green {
   height: 108px;
   background-color: rgba(25, 146, 4, 0.939);
+  color: #ffdcda
 }
 
 .green {
@@ -178,17 +200,19 @@ function initial() {
   padding-left: 200px;
 }
 
-.n-layout-content {}
+.projectsCard {
+  border-radius: 12px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: var(--boxShadow-light);
+
+  &:hover {
+    box-shadow: var(--boxShadow-regular)
+  }
+}
 
 .n-gradient-text {
   font-size: 16px;
-}
-</style>
-
-<style scoped>
-.carousel-img {
-  width: 100%;
-  height: 450px;
-  object-fit: cover;
 }
 </style>

@@ -1,5 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+
+</script>
 
 <template>
-    <div>project</div>
+    <div>
+        <div>
+            <router-view />
+        </div>
+    </div>
 </template>
