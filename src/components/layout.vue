@@ -4,14 +4,9 @@ import {
     NButton,
     NDivider,
     NFlex,
-    NGrid, NGi,
     NIcon,
     NLayout, NLayoutHeader, NLayoutContent,
-    NSplit,
-    NTimeline,
-    NTimelineItem,
-    NGradientText, NEllipsis, NCarousel,
-    NLayoutFooter, NLayoutSider
+    NLayoutFooter
 } from 'naive-ui';
 import router from '../router/router';
 
@@ -27,9 +22,7 @@ function initial() {
     contentRef.value = "1";
 }
 
-function handleRoutesChange(action: 0 | 1 | 2) {
-
-    console.log(router.currentRoute.value.name)
+function handleRoutesChange(action: 0 | 1 | 2 | 3) {
     switch (action) {
         case 0:
             router.push({ name: "website-layout-landing" });
@@ -40,6 +33,9 @@ function handleRoutesChange(action: 0 | 1 | 2) {
         case 2:
             router.push({ name: "website-layout-about" });
             break;
+        case 3:
+            router.push({ name: "website-layout-competition" })
+            break;
         default:
             break;
     }
@@ -49,10 +45,11 @@ function handleRoutesChange(action: 0 | 1 | 2) {
 <template>
     <div>
         <n-layout>
-            <n-layout-header style="max-width: 960px; margin: 0 auto; padding: 24px">
+            <n-layout-header style="max-width: 960px; margin: 0 auto; padding: 24px 0">
                 <n-flex justify="end" size="large">
                     <n-button text @click="handleRoutesChange(0)">Home</n-button>
                     <n-button text @click="handleRoutesChange(1)">Project</n-button>
+                    <n-button text @click="handleRoutesChange(3)">Competition</n-button>
                     <n-button text @click="handleRoutesChange(2)">About</n-button>
                 </n-flex>
             </n-layout-header>

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref, computed, onUnmounted, onMounted } from 'vue'
+import { computed } from 'vue'
 import {
     NLayout, NLayoutHeader, NLayoutContent,
     NTimeline, NTimelineItem, NGradientText, NEllipsis,
-    NSpin, NProgress
+    NProgress
 } from 'naive-ui';
 
 const highSchoolStart = new Date('2022-08-08');
@@ -11,12 +11,12 @@ const highSchoolEnd = new Date('2026-06-19');
 
 
 const currentDate = new Date();
-
+ 
 const totalDuration = highSchoolEnd.getTime() - highSchoolStart.getTime();
 const elapsedTime = currentDate.getTime() - highSchoolStart.getTime();
 
 const elapsedDay = Math.floor(((elapsedTime / 1000) / 3600) / 24);
-
+// const MiddleSchoolEnd = elapsedDay+24;
 
 const highSchoolProgress = computed(() => {
     return (Math.min(Math.max((elapsedTime / totalDuration) * 100, 0), 100)).toFixed(2);
