@@ -11,7 +11,7 @@ const highSchoolEnd = new Date('2026-06-19');
 
 
 const currentDate = new Date();
- 
+
 const totalDuration = highSchoolEnd.getTime() - highSchoolStart.getTime();
 const elapsedTime = currentDate.getTime() - highSchoolStart.getTime();
 
@@ -27,10 +27,14 @@ const highSchoolProgress = computed(() => {
 <template>
     <div style="overflow: hidden;">
         <n-layout>
-            <n-layout-header>
+            <n-layout-header style="padding: 0;">
                 <h1>Introduction</h1>
                 <n-ellipsis expand-trigger="click" line-clamp="2" :tooltip="false">
-                    你说得对
+                    鲁巴金曾经提到过，读书是在别人思想的帮助下，建立起自己的思想。这不禁令我深思。 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。
+                    了解清楚生活的意义到底是一种怎么样的存在，是解决一切问题的关键。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 可是，即使是这样，生活的意义的出现仍然代表了一定的意义。
+                    就我个人来说，生活的意义对我的意义，不能不说非常重大。 赫尔普斯曾经说过，有时候读书是一种巧妙地避开思考的方法。这不禁令我深思。 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。
+                    生活中，若生活的意义出现了，我们就不得不考虑它出现了的事实。 每个人都不得不面对这些问题。 在面对这种问题时， 我认为，
+                    吕凯特曾经说过，生命不可能有两次，但许多人连一次也不善于度过。这似乎解答了我的疑惑。 生活的意义因何而发生？ 经过上述讨论， 生活的意义因何而发生。
                 </n-ellipsis>
             </n-layout-header>
             <n-layout-content>
@@ -75,6 +79,8 @@ const highSchoolProgress = computed(() => {
 
 <style scoped lang="less">
 .n-layout {
-    padding: 200px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 25px;
 }
 </style>
