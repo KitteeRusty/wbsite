@@ -51,7 +51,7 @@ function initial() {
       </n-gi>
       <n-gi :span="8">
         <n-flex :justify="'end'">
-          <n-avatar :size="289" round>Xinghan Pan</n-avatar>
+          <n-avatar :size="289" src="/landingAvatar.jpg" round />
         </n-flex>
       </n-gi>
     </n-grid>
@@ -71,6 +71,7 @@ function initial() {
         </n-gi>
       </n-grid>
     </div>
+    <div style="height: 200px"></div>
     <!-- 第一个部分 -->
     <!-- <n-divider title-placement="left" style="font-size:30px; font-weight: bold;">
       Part 1

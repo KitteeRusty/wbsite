@@ -3,6 +3,7 @@ import { projects, projectData } from '../project';
 import router from '../../../router/router';
 import { ref } from 'vue';
 import gridDisplayVue from './gridDisplay/gridDisplay.vue';
+import { NCode, NImage } from 'naive-ui';
 
 const project = ref<projectData | null>(null);
 
