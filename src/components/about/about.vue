@@ -44,7 +44,7 @@ const highSchoolProgress = computed(() => {
                         <n-timeline style="align-items: center;">
                             <div style="overflow: hidden; max-height: 100vh;">
                                 <n-timeline-item title="这是1" content="awdoawhdiasawd"
-                                    time="1900-01-01"></n-timeline-item>
+                                    time="2009-06-11"></n-timeline-item>
                                 <n-timeline-item title="这是2" content="awdoawhdiasawd"
                                     time="1910-02-03"></n-timeline-item>
                                 <n-timeline-item title="这是3" content="awdoawhdiasawd"

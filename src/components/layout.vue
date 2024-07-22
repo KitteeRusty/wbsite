@@ -25,16 +25,16 @@ function initial() {
 function handleRoutesChange(action: 0 | 1 | 2 | 3) {
     switch (action) {
         case 0:
-            router.push({ name: "website-layout-landing" });
+            router.push({ name: "landing" });
             break;
         case 1:
-            router.push({ name: "website-layout-project" });
+            router.push({ name: "project" });
             break;
         case 2:
-            router.push({ name: "website-layout-about" });
+            router.push({ name: "about" });
             break;
         case 3:
-            router.push({ name: "website-layout-competition" })
+            router.push({ name: "competition" })
             break;
         default:
             break;

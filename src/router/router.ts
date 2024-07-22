@@ -11,29 +11,29 @@ const routes: Array<RouteRecordRaw> = [
         children: [
             {
                 path: "",
-                name: "website-layout-landing",
+                name: "landing",
                 component: () => import('../components/landing/landing.vue')
             },
             {
                 path: "project",
-                name: "website-layout-project",
+                name: "project",
                 component: () => import('../components/project/project.vue'),
                 children: [
                     {
                         path: "fire-escape",
-                        name: "project-algorithms-fireEscape",
+                        name: "project-fireEscape",
                         component: () => import('../components/project/algorithms/fireEscape.vue')
                     },
                 ]
             },
             {
                 path: "about",
-                name: "website-layout-about",
+                name: "about",
                 component: () => import('../components/about/about.vue')
             },
             {
-                path:"competition",
-                name: "website-layout-competition",
+                path: "competition",
+                name: "competition",
                 component: () => import('../components/competition/competition.vue')
             }
         ]

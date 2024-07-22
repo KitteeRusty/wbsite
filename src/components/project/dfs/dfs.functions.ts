@@ -37,7 +37,7 @@ export function dfsFireEscape(grid: number[][], fireMap: number[][]) {
                 visited.delete(`${nx},${ny}`);
             }
         }
-        return null;
+        return path;
     }
 
     function findFastestRoute(grid: number[][], fireMap: number[][]) {
