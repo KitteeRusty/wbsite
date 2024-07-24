@@ -28,36 +28,31 @@ function initial() {
 </script>
 
 <template>
-  <div style="max-width: 960px; margin: auto; padding: 24px">
+  <div style="max-width: 100%; margin: auto; padding: 8px">
     <!-- display: flex; align-items: center; justify-content: space-between -->
     <!-- 介绍 -->
     <!-- <n-flex :align="'center'" :justify="'space-between'">
       <div :style="'font-size: 48px'"><b>Xinghan Pan</b></div>
       <n-gradient-text gradient="linear-gradient(90deg, red 0%, green 50%, blue 100%)">早上中午晚上好</n-gradient-text>
     </n-flex> -->
-    <n-grid style="margin: 48px 0; align-items: center;">
-      <n-gi :span="16">
-        <div style="font-size: 48px"><b>
-            <span style="font-size: 56px">Hello,</span> I'm Xinghan Pan!
-          </b></div>
-        <div style="font-size: 18px; max-width: 480px;">
-          <p>I currently study at Shenzhen College of International Education.</p>
-          <p>As a passionate student of computer science, I'm dedicated to learn algorithms and
-            exploring the frontiers of artificial intelligence.</p>
-          <p>My drive to innovate in these fields makes me eager to contribute to and thrive in small but useful
-            projects
-          </p>
-        </div>
-      </n-gi>
-      <n-gi :span="8">
-        <n-flex :justify="'end'">
-          <n-avatar :size="289" src="/landingAvatar.jpg" round />
-        </n-flex>
-      </n-gi>
-    </n-grid>
+
+    <div style="font-size: 48px"><b>
+        <span style="font-size: 56px">Hello,</span> I'm Xinghan Pan!
+      </b></div>
+    <n-flex :justify="'center'">
+      <n-avatar :size="289" src="/landingAvatar.jpg" round />
+    </n-flex>
+    <div style="font-size: 18px; max-width: 100%;">
+      <p>I currently study at Shenzhen College of International Education.</p>
+      <p>As a passionate student of computer science, I'm dedicated to learn algorithms and
+        exploring the frontiers of artificial intelligence.</p>
+      <p>My drive to innovate in these fields makes me eager to contribute to and thrive in small but useful
+        projects
+      </p>
+    </div>
     <div>
       <div style="font-size: 24px; margin: 12px 0"><b>Projects that I have worked on</b></div>
-      <n-grid :cols="2">
+      <n-grid :cols="1">
         <n-gi v-for="project in projects">
           <div class="projectsCard" @click="router.push({ name: project.routerKey })">
             <!-- :style="{ backgroundColor: project.color }" -->

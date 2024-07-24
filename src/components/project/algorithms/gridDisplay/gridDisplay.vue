@@ -29,6 +29,10 @@ const props = defineProps({
         type: Boolean,
         default: () => false
     },
+    width: {
+        type: String,
+        default: () => '360px'
+    },
 })
 
 const sliderValue = ref(0);
@@ -198,7 +202,7 @@ function handleSetBlock(x: number, y: number) {
 </script>
 
 <template>
-    <div class="GridContainer">
+    <div class="GridContainer" :style="{ width: width }">
         <n-flex v-if="allowSetup" style="margin: 24px 0" :justify="'end'" :align="'center'">
             Click to switch block
             <n-switch :rail-style="railStyle" v-model:value="switchVal" :checked-value="1" :unchecked-value="2"
@@ -319,7 +323,6 @@ function handleSetBlock(x: number, y: number) {
 
 <style lang="less" scoped>
 .GridContainer {
-    width: 360px;
     margin: 0 auto;
 
     .sliderContainer {

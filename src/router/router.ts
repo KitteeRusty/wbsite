@@ -1,35 +1,36 @@
 
 import { createWebHistory, createRouter } from "vue-router";
 import { RouteRecordRaw } from "vue-router";
+import store from "../store/store";
 
 const routes: Array<RouteRecordRaw> = [
     {
         // path: "/website",
         path: "/",
         name: "website-layout",
-        component: () => import('../components/layout.vue'),
+        component: () => store.state.display.isMobile ? import('../components/mLayout.vue') : import('../components/layout.vue'),
         children: [
             {
                 path: "",
                 name: "landing",
-                component: () => import('../components/landing/landing.vue')
+                component: () => store.state.display.isMobile ? import('../components/landing/mLanding.vue') : import('../components/landing/landing.vue')
             },
             {
                 path: "project",
                 name: "project",
-                component: () => import('../components/project/project.vue'),
+                component: () => store.state.display.isMobile ? import('../components/project/mProject.vue') : import('../components/project/project.vue'),
                 children: [
                     {
                         path: "fire-escape",
                         name: "project-fireEscape",
-                        component: () => import('../components/project/algorithms/fireEscape.vue')
+                        component: () => store.state.display.isMobile ? import('../components/project/algorithms/mFireEscape.vue') : import('../components/project/algorithms/fireEscape.vue')
                     },
                 ]
             },
             {
                 path: "about",
                 name: "about",
-                component: () => import('../components/about/about.vue')
+                component: () => store.state.display.isMobile ? import('../components/about/mAbout.vue'): import('../components/about/about.vue')
             },
             {
                 path: "competition",

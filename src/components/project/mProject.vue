@@ -30,13 +30,13 @@ function initial() {
             <n-layout-header style="padding-left: 30px; padding-bottom: 0px;">
                 <div style="font-size: 42px; font-weight: bold;">Project</div>
                 <div style="color: grey; ">Welcome to my Project showcase. This collection highlights my previous work,
-                    <br> demonstrating some of sudden bright idea. Each project represents a unique challenge <br> and
+                    <br> demonstrating some of sudden bright idea. Each project represents a unique challenge and
                     innovative solution.
                 </div>
             </n-layout-header>
             <n-layout-content style="padding-left: 30px; padding-bottom: 100px;">
                 <div class="subHead">Explained Algorithm Series</div>
-                <n-grid :cols="4" :x-gap="12" :y-gap="8" style="padding-bottom: 30px;">
+                <n-grid :cols="1" :x-gap="12" :y-gap="8" style="padding-bottom: 30px;">
                     <n-gi>
                         <div style="border: 1px solid aquamarine;" class="projectsCard"
                             @click="router.push({ name: 'project-fireEscape' })">
@@ -56,7 +56,7 @@ function initial() {
                         </div>
                     </n-gi>
                 </n-grid>
-                <n-grid cols="2" :x-gap="12" :y-gap="8">
+                <n-grid cols="1" :x-gap="12" :y-gap="8">
                     <n-gi>
                         <div class="subHead">Example Project 1</div>
                         <div style="color: grey;">Time: 1970/01/01</div>
@@ -81,16 +81,18 @@ function initial() {
                             </div>
                         </div>
                         <div style="text-align: center; padding: 30px;">
-                            <n-image width="400" src="/example_1.png"></n-image>
+                            <n-image width="200" src="/example_1.png"></n-image>
                         </div>
                         <div>
                             <n-row>
-                                <n-col :span="6">
+                                <n-col :span="12">
                                     <n-statistic label="Lines of code" :value="3218"></n-statistic>
                                 </n-col>
-                                <n-col :span="6">
+                                <n-col :span="12">
                                     <n-statistic label="Hours Spent" :value="100"></n-statistic>
                                 </n-col>
+                            </n-row>
+                            <n-row>
                                 <n-col :span="6">
                                     <n-statistic label="Commits" :value="128"></n-statistic>
                                 </n-col>
@@ -124,16 +126,18 @@ function initial() {
                             </div>
                         </div>
                         <div style="text-align: center; padding: 30px;">
-                            <n-image width="400" src="/example_1.png"></n-image>
+                            <n-image width="200" src="/example_1.png"></n-image>
                         </div>
                         <div>
                             <n-row>
-                                <n-col :span="6">
+                                <n-col :span="12">
                                     <n-statistic label="Lines of code" :value="3218"></n-statistic>
                                 </n-col>
-                                <n-col :span="6">
+                                <n-col :span="12">
                                     <n-statistic label="Hours Spent" :value="100"></n-statistic>
                                 </n-col>
+                            </n-row>
+                            <n-row>
                                 <n-col :span="6">
                                     <n-statistic label="Commits" :value="128"></n-statistic>
                                 </n-col>

@@ -2,7 +2,7 @@
 
 import { projects, projectData } from '../project';
 import router from '../../../router/router';
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import gridDisplayVue from './gridDisplay/gridDisplay.vue';
 import { NCard, NFlex, NCode, NImage, NTime, NText, NIcon, NAnchor, NAnchorLink, NStatistic, NEquation } from 'naive-ui';
 import { Katex } from 'naive-ui/es/config-provider/src/katex';
@@ -22,6 +22,20 @@ const codeSection = ref(null);
 const scrollContainer = ref(null);
 
 const firstThought = ref(null);
+
+const isSmallScreen = ref(window.innerWidth <= 768);
+
+const updateScreenSize = () => {
+    isSmallScreen.value = window.innerWidth <= 768;
+};
+
+onMounted(() => {
+    window.addEventListener('resize', updateScreenSize);
+});
+
+onUnmounted(() => {
+    window.removeEventListener('resize', updateScreenSize);
+});
 
 const fullcode = `#include <vector>
 #include <queue>
@@ -245,11 +259,13 @@ function scrollToFirstThought() {
 </script>
 
 <template>
-    <div ref="scrollContainer" style="height: 100%">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <div ref="scrollContainer" style="height: 100%; overflow: hidden;">
         <Transition>
-            <n-anchor ref="anchorRef" affix :trigger-top="88" :top="88" style="z-index: 1; padding: 24px; float: left;">
-                <n-anchor-link title="Question Briefing" @click="scrollToQuestion">
-                </n-anchor-link>
+            <n-anchor ref="anchorRef" affix :trigger-top="88" :top="88"
+                style="z-index: 1; padding: 1.5rem; float: left;">
+                <n-anchor-link title="Question Briefing" @click="scrollToQuestion" />
                 <n-anchor-link title="First Thought" @click="scrollToFirstThought" />
                 <n-anchor-link title="BFS Explanation" @click="scrollToBFS" />
                 <n-anchor-link title="Binary Search Explanation" @click="scrollToBS" />
@@ -259,7 +275,7 @@ function scrollToFirstThought() {
         </Transition>
         <div v-if="project" class="projectDetailPage">
             <div>
-                <div style="font-size: 48px;">
+                <div style="font-size: 3rem;">
                     <b>{{ project.name }}</b>
                 </div>
                 <div>
@@ -268,7 +284,7 @@ function scrollToFirstThought() {
                     </n-text>
                 </div>
             </div>
-            <div style="padding: 48px">
+            <div style="padding: 3rem">
                 <!-- <grid-display-vue :rows="5" :cols="7" :figurePosition="0"></grid-display-vue> -->
                 <p>This question is on <b>Leetcode 2258</b>. This question relates to bfs.</p>
                 <n-flex vertical :size="48">
@@ -313,10 +329,10 @@ function scrollToFirstThought() {
                                 -1 </b>,
                             and if it can always escape return <b class="greyhighlight">10<sup>9</sup></b>
                         </p>
-                        <div @click="scrollToCode" class="link" style="font-size: 10px;">Click to skip to full
+                        <div @click="scrollToCode" class="link" style="font-size: 0.625rem;">Click to skip to full
                             code
                         </div>
-                        <div style="text-align: center; font-weight: bold; font-size: 16px;">Visualization</div>
+                        <div style="text-align: center; font-weight: bold; font-size: 1rem;">Visualization</div>
                         <grid-display-vue :rows="5" :cols="7" :figurePosition="0" :allowSlide="true" :showPlayer="true"
                             :showExit="true" :allowSetup="true"></grid-display-vue>
                     </div>
@@ -371,7 +387,7 @@ function scrollToFirstThought() {
                         <div style="text-align: center"><n-image width="600" src="/BFSexplain.png"></n-image>
                         </div>
                         <div style="text-align: center;"><n-image width="400" lazy src="/bfs_demo.gif"></n-image></div>
-                        <div style="text-align: center; padding-bottom: 40px;"><b>BFS explanation</b></div>
+                        <div style="text-align: center; padding-bottom: 0.156rem;"><b>BFS explanation</b></div>
                         <div>BFS can also work in <b class="greyhighlight">graph</b> rather than just grid. A graph is
                             made up of <b class="greyhighlight">vertices (points)</b>
                             connected by <b class="greyhighlight">edges (lines)</b>. Vertices represent entities or
@@ -382,7 +398,7 @@ function scrollToFirstThought() {
                             For example, in a road network, edge lengths might represent travel time or distance,
                             enabling us to solve problems like finding the shortest path or optimizing routes.</div>
                         its time complexity is:<b
-                            style="font-size: 22px; font-weight: 2000; font-style: italic; font-family:serif;">O(V+E)</b>
+                            style="font-size: 1.375rem; font-weight: 2000; font-style: italic; font-family:serif;">O(V+E)</b>
                         (Vertices+Edges)
                         <div style="text-align: center;"><n-image width="200" src="/graph.png"></n-image></div>
                     </div>
@@ -430,13 +446,13 @@ function scrollToFirstThought() {
                             computer science and everyday problem-solving, particularly when dealing with sorted data.
                         </p>
                         <div>Its time complexity is <b
-                                style="font-size: 22px; font-weight: 2000; font-style: italic; font-family:serif;">O(log(n))</b>
+                                style="font-size: 1.375rem; font-weight: 2000; font-style: italic; font-family:serif;">O(log(n))</b>
                         </div>
                         <div style="text-align: center;"><b>Imagine you need to find number 2 in an array -5 to 5</b>
                         </div>
                         <div style="text-align: center;"><n-image width="600" lazy src="/binarysearch.gif"></n-image>
                         </div>
-                        <div style="text-align: center; font-size: 16px;"><b>Binary Search animation</b></div>
+                        <div style="text-align: center; font-size: 1rem;"><b>Binary Search animation</b></div>
                     </div>
                     <div>
                         <div class="subTitle" ref="solution">Solution</div>
@@ -483,20 +499,20 @@ function scrollToFirstThought() {
                         </n-card>
                     </div>
                     <div>
-                        <div ref="codeSection" class="subTitle" style="padding-top: 60px;">Complete Code</div>
+                        <div ref="codeSection" class="subTitle" style="padding-top: 3.75rem;">Complete Code</div>
                         <n-card>
                             <n-code :code="fullcode" language="cpp" show-line-numbers word-wrap></n-code>
                         </n-card>
                         <div style="display: flex; align-items: center;">
-                            <n-statistic style="font-weight: bold; padding-right: 28px;" label="Time Complexity"><img style="width: 200px;"
-                                    src="/time_complexity.png" alt=""></n-statistic>
+                            <n-statistic style="font-weight: bold; padding-right: 1.75rem;" label="Time Complexity"><img
+                                    style="width: 12.5rem;" src="/time_complexity.png" alt=""></n-statistic>
                         </div>
                         <div><b>The following data came from Leetcode</b> </div>
                         <div style="display: flex; align-items: center;">
-                                <n-statistic style="padding-right: 28px;" label="Run Time"><b>41ms</b></n-statistic>
-                                <n-statistic style="padding-right: 28px;" label="Beats"><b>86.50%</b></n-statistic>
-                                <n-statistic style="padding-right: 28px;" label="Memory"><b>22.89MB</b></n-statistic>
-                                <n-statistic style="padding-right: 28px;" label="Beats"><b>92.93%</b></n-statistic>
+                            <n-statistic style="padding-right: 1.75rem;" label="Run Time"><b>41ms</b></n-statistic>
+                            <n-statistic style="padding-right: 1.75rem;" label="Beats"><b>86.50%</b></n-statistic>
+                            <n-statistic style="padding-right: 1.75rem;" label="Memory"><b>22.89MB</b></n-statistic>
+                            <n-statistic style="padding-right: 1.75rem;" label="Beats"><b>92.93%</b></n-statistic>
                         </div>
                     </div>
                 </n-flex>
@@ -507,12 +523,16 @@ function scrollToFirstThought() {
 
 <style lang="less" scoped>
 .projectDetailPage {
-    width: 960px;
-    padding: 24px;
+    width: 60rem;
+    padding: 1.5rem;
     margin: 0 auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+
 
     .subTitle {
-        font-size: 28px;
+        font-size: 1.75rem;
         font-weight: bold;
 
     }
@@ -525,25 +545,37 @@ function scrollToFirstThought() {
         background-color: rgba(21, 227, 162, 0.3);
         color: black;
         font-weight: bold;
-        padding: 0 2px;
-        border-radius: 3px;
+        padding: 0 0.125rem;
+        border-radius: 0.188rem;
 
     }
 }
 
 .link {
     display: inline-block;
-    text-shadow: 30px;
+    text-shadow: 1.875rem;
     font-style: italic;
     background-color: rgb(211, 211, 211);
     opacity: 0.8;
-    border-radius: 35px;
-    padding: 10 50px;
+    border-radius: 2.188rem;
+    padding: 0.625 3.125rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .list {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     font-style: oblique;
+}
+
+.hide-on-small {
+    display: block;
+}
+
+@media (max-width: 1023px) {
+    .hide-on-small {
+        display: none;
+    }
 }
 </style>
