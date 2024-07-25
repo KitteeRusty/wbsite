@@ -39,7 +39,7 @@ function initial() {
                 <n-grid :cols="1" :x-gap="12" :y-gap="8" style="padding-bottom: 30px;">
                     <n-gi>
                         <div style="border: 1px solid aquamarine;" class="projectsCard"
-                            @click="router.push({ name: 'project-fireEscape' })">
+                            @click="router.push({ name: 'projects-fireEscape' })">
                             <div style="font-size: 18px"><b>Escape the Spreading Fire</b></div>
                             <div>
                                 <n-text :depth="3">
@@ -62,7 +62,7 @@ function initial() {
                         <div style="color: grey;">Time: 1970/01/01</div>
                         <div>
                             <div style="border: 1px solid aquamarine;" class="projectsCard"
-                                @click="router.push({ name: 'project-fireEscape' })">
+                                @click="router.push({ name: 'projects-fireEscape' })">
                                 <div style="font-size: 18px"><b>Escape the Spreading Fire</b></div>
                                 <div>
                                     <n-text :depth="3">
@@ -104,7 +104,7 @@ function initial() {
                         <div style="color: grey;">Time: 1970/01/01</div>
                         <div>
                             <div style="border: 1px solid aquamarine;" class="projectsCard"
-                                @click="router.push({ name: 'project-fireEscape' })">
+                                @click="router.push({ name: 'projects-fireEscape' })">
                                 <div style="font-size: 18px"><b>Escape the Spreading Fire</b></div>
                                 <div>
                                     <n-text :depth="3">
@@ -156,8 +156,6 @@ function initial() {
 <style>
 .lout {
     padding-top: 10px;
-    padding-right: 100px;
-    padding-left: 100px;
 }
 
 .subHead {

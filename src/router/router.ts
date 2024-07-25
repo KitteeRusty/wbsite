@@ -18,11 +18,16 @@ const routes: Array<RouteRecordRaw> = [
             {
                 path: "project",
                 name: "project",
+                component: () => store.state.display.isMobile ? import('../components/project/landing/mLanding.vue') : import('../components/project/landing/landing.vue')
+            },
+            {
+                path: "projects",
+                name: "projects",
                 component: () => store.state.display.isMobile ? import('../components/project/mProject.vue') : import('../components/project/project.vue'),
                 children: [
                     {
                         path: "fire-escape",
-                        name: "project-fireEscape",
+                        name: "projects-fireEscape",
                         component: () => store.state.display.isMobile ? import('../components/project/algorithms/mFireEscape.vue') : import('../components/project/algorithms/fireEscape.vue')
                     },
                 ]
@@ -30,12 +35,17 @@ const routes: Array<RouteRecordRaw> = [
             {
                 path: "about",
                 name: "about",
-                component: () => store.state.display.isMobile ? import('../components/about/mAbout.vue'): import('../components/about/about.vue')
+                component: () => store.state.display.isMobile ? import('../components/about/mAbout.vue') : import('../components/about/about.vue')
             },
             {
                 path: "competition",
                 name: "competition",
-                component: () => import('../components/competition/competition.vue')
+                component: () => store.state.display.isMobile ? import('../components/competition/mCompetition.vue'): import('../components/competition/competition.vue')
+            },
+            {
+                path: "activity",
+                name: "activity",
+                component: () => store.state.display.isMobile ? import('../components/activity/mActivity.vue'): import('../components/activity/activity.vue')
             }
         ]
     },

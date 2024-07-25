@@ -22,7 +22,7 @@ function initial() {
     contentRef.value = "1";
 }
 
-function handleRoutesChange(action: 0 | 1 | 2 | 3) {
+function handleRoutesChange(action: 0 | 1 | 2 | 3 | 4) {
     switch (action) {
         case 0:
             router.push({ name: "landing" });
@@ -35,6 +35,9 @@ function handleRoutesChange(action: 0 | 1 | 2 | 3) {
             break;
         case 3:
             router.push({ name: "competition" })
+            break;
+        case 4:
+            router.push({ name: "activity" })
             break;
         default:
             break;
@@ -50,6 +53,7 @@ function handleRoutesChange(action: 0 | 1 | 2 | 3) {
                     <n-button text @click="handleRoutesChange(0)">Home</n-button>
                     <n-button text @click="handleRoutesChange(1)">Project</n-button>
                     <n-button text @click="handleRoutesChange(3)">Competition</n-button>
+                    <n-button text @click="handleRoutesChange(4)">Activity</n-button>
                     <n-button text @click="handleRoutesChange(2)">About</n-button>
                 </n-flex>
             </n-layout-header>
