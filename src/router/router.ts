@@ -5,8 +5,8 @@ import store from "../store/store";
 
 const routes: Array<RouteRecordRaw> = [
     {
-        // path: "/website",
-        path: "/",
+        path: "/website",
+        // path: "/",
         name: "website-layout",
         component: () => store.state.display.isMobile ? import('../components/mLayout.vue') : import('../components/layout.vue'),
         children: [
@@ -40,12 +40,12 @@ const routes: Array<RouteRecordRaw> = [
             {
                 path: "competition",
                 name: "competition",
-                component: () => store.state.display.isMobile ? import('../components/competition/mCompetition.vue'): import('../components/competition/competition.vue')
+                component: () => store.state.display.isMobile ? import('../components/competition/mCompetition.vue') : import('../components/competition/competition.vue')
             },
             {
                 path: "activity",
                 name: "activity",
-                component: () => store.state.display.isMobile ? import('../components/activity/mActivity.vue'): import('../components/activity/activity.vue')
+                component: () => store.state.display.isMobile ? import('../components/activity/mActivity.vue') : import('../components/activity/activity.vue')
             }
         ]
     },
