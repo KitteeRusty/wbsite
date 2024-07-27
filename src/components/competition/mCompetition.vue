@@ -77,7 +77,7 @@ const currentImage = computed(() => AMCimages[currentIndex.value]);
                 </n-ellipsis>
                 <div class="carousel">
                     <button @click="prevSlide" class="carousel-control prev">‹</button>
-                    <img style="width:300px" :src="currentImage" class="carousel-img" alt="AMC Image">
+                    <n-image style="width:300px" :src="currentImage" class="carousel-img" alt="AMC Image"/>
                     <button @click="nextSlide" class="carousel-control next">›</button>
                 </div>
 
