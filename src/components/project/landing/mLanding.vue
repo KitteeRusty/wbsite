@@ -40,7 +40,7 @@ import { ref } from 'vue';
                         </div>
                     </div>
                     <div style="text-align: center; padding: 10px;">
-                        <n-image width="250" src="/example_1.png"></n-image>
+                        <n-image width="250" src="/images/example_1.png"></n-image>
                     </div>
                     <div>
                         <n-row>
@@ -85,7 +85,7 @@ import { ref } from 'vue';
                         </div>
                     </div>
                     <div style="text-align: center; padding: 10px;">
-                        <n-image width="250" src="/example_1.png"></n-image>
+                        <n-image width="250" src="/images/example_1.png"></n-image>
                     </div>
                     <div>
                         <n-row>

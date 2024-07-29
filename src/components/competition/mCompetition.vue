@@ -5,10 +5,10 @@ import {
 } from 'naive-ui';
 
 const AMCimages = [
-    '/AMC1.jpg',
-    '/AMC2.jpg',
-    '/AMC3.jpg',
-    '/AMC4.jpg'
+    '/images/AMC1.jpg',
+    '/images/AMC2.jpg',
+    '/images/AMC3.jpg',
+    '/images/AMC4.jpg'
 ];
 const currentIndex = ref(0);
 const nextSlide = () => {
@@ -31,7 +31,7 @@ const currentImage = computed(() => AMCimages[currentIndex.value]);
         <div class="sheading" style="font-size: 2rem;">Competition Progresses</div>
         <n-flex>
             <div class="sheading">AMC12</div>
-            <img src="/AMCIcon.png" alt="" style="max-width: 48px;">
+            <img src="/images/AMCIcon.png" alt="" style="max-width: 48px;">
         </n-flex>
         <div><b style="font-size: 15px;">2023 AMC12B: <br> Honor Roll of Distinction <br> 144 out of
                 150</b></div>
@@ -91,7 +91,7 @@ const currentImage = computed(() => AMCimages[currentIndex.value]);
         </div>
         <n-flex style="width: 300px;">
             <div class="sheading">AIME</div>
-            <img src="/AMCIcon.png" alt="" style="max-width: 48px;">
+            <img src="/images/AMCIcon.png" alt="" style="max-width: 48px;">
         </n-flex>
         <div style="width: 800px;"><b style="font-size: 17px;">Achieved 11 out of 15 in 2024 AIME II </b></div>
         <n-flex style="align-items: center;">
@@ -107,11 +107,11 @@ const currentImage = computed(() => AMCimages[currentIndex.value]);
                 clear test-day strategy. Utilizing resources like AoPS books, handouts, and mock contests, I maintained
                 consistency and persistence, ensuring I was well-prepared and confident on the exam day. </n-ellipsis>
         </n-flex>
-        <div style="text-align: center;"><n-image width="300" src="/AIME.jpg"></n-image></div>
+        <div style="text-align: center;"><n-image width="300" src="/images/AIME.jpg"></n-image></div>
 
         <n-flex style="width: 300px;">
             <div class="sheading">BPhO</div>
-            <img src="/bphoicon.png" alt="" style="max-width: 150px;">
+            <img src="/images/bphoicon.png" alt="" style="max-width: 150px;">
         </n-flex>
         <div style="width: 800px;"><b style="font-size: 17px;">Silver Award in the Intermediate Physic
                 Challenge</b></div>
@@ -132,7 +132,7 @@ const currentImage = computed(() => AMCimages[currentIndex.value]);
                 silver award.
             </n-ellipsis>
         </n-flex>
-        <div style="text-align: center;"> <n-image width="250" src="/bpho.jpg"></n-image>
+        <div style="text-align: center;"> <n-image width="250" src="/images/bpho.jpg"></n-image>
         </div>
     </div>
 </template>
