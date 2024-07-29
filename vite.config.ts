@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig(({ mode }) => {
   return {
     plugins: [vue()],
-    base: mode === 'proudction' ? '/website/' : '/', // 替换为您的仓库名称
+    base: '/website', // 替换为您的仓库名称
     build: {
       outDir: 'dist'
     }

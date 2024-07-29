@@ -81,7 +81,7 @@ function initial() {
                             </div>
                         </div>
                         <div style="text-align: center; padding: 30px;">
-                            <n-image width="200" src="/images/example_1.png"></n-image>
+                            <n-image width="200" src="/website/images/example_1.png"></n-image>
                         </div>
                         <div>
                             <n-row>
@@ -126,7 +126,7 @@ function initial() {
                             </div>
                         </div>
                         <div style="text-align: center; padding: 30px;">
-                            <n-image width="200" src="/images/example_1.png"></n-image>
+                            <n-image width="200" src="/website/images/example_1.png"></n-image>
                         </div>
                         <div>
                             <n-row>

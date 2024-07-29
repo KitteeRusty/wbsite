@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import {
-    NButton, NFlex, NEllipsis, NImage
+    NButton, NCarousel, NFlex, NGrid, NGi, NEllipsis, NImage
 } from 'naive-ui';
 
 const AMCimages = [
-    '/images/AMC1.jpg',
-    '/images/AMC2.jpg',
-    '/images/AMC3.jpg',
-    '/images/AMC4.jpg'
+    '/website/images/AMC1.jpg',
+    '/website/images/AMC2.jpg',
+    '/website/images/AMC3.jpg',
+    '/website/images/AMC4.jpg'
 ];
 const currentIndex = ref(0);
 const nextSlide = () => {
@@ -31,12 +31,12 @@ const currentImage = computed(() => AMCimages[currentIndex.value]);
         <div class="sheading" style="font-size: 2.75rem;">Competition Progresses</div>
         <n-flex>
             <div class="sheading">AMC12</div>
-            <img src="/images/AMCIcon.png" alt="" style="max-width: 48px;">
+            <img src="/website/images/AMCIcon.png" alt="" style="max-width: 48px;">
         </n-flex>
         <div><b style="font-size: 17px;">Achieved Honor Roll of Distinction in 2023 AMC12B with the score of 144 out of
                 150</b></div>
         <div class="content-container">
-            <n-flex>
+            <n-flex :x-gap="24">
                 <n-ellipsis style="width: 650px; padding-right: 25px;" expand-trigger="click" :line-clamp="11"
                     :tooltip="false">
                     My experience for the AMC contest is full of twist and turns. ÍThe first time I participate in
@@ -77,10 +77,9 @@ const currentImage = computed(() => AMCimages[currentIndex.value]);
                 </n-ellipsis>
                 <div class="carousel">
                     <button @click="prevSlide" class="carousel-control prev">‹</button>
-                    <n-image style="width:300px" :src="currentImage" class="carousel-img" alt="AMC Image"/>
+                    <n-image style="width:300px" :src="currentImage" class="carousel-img" alt="AMC Image" />
                     <button @click="nextSlide" class="carousel-control next">›</button>
                 </div>
-
             </n-flex>
         </div>
         <div>
@@ -91,7 +90,7 @@ const currentImage = computed(() => AMCimages[currentIndex.value]);
         </div>
         <n-flex style="width: 300px;">
             <div class="sheading">AIME</div>
-            <img src="/images/AMCIcon.png" alt="" style="max-width: 48px;">
+            <img src="/website/images/AMCIcon.png" alt="" style="max-width: 48px;">
         </n-flex>
         <div style="width: 800px;"><b style="font-size: 17px;">Achieved 11 out of 15 in 2024 AIME II </b></div>
         <n-flex style="align-items: center;">
@@ -106,11 +105,11 @@ const currentImage = computed(() => AMCimages[currentIndex.value]);
                 intensified my practice with more frequent timed sessions, participated in mock exams, and devised a
                 clear test-day strategy. Utilizing resources like AoPS books, handouts, and mock contests, I maintained
                 consistency and persistence, ensuring I was well-prepared and confident on the exam day. </n-ellipsis>
-                <n-image width="300" src="/images/AIME.jpg"></n-image>
+            <n-image width="300" src="/website/images/AIME.jpg"></n-image>
         </n-flex>
         <n-flex style="width: 300px;">
             <div class="sheading">BPhO</div>
-            <img src="/images/bphoicon.png" alt="" style="max-width: 150px;">
+            <img src="/website/images/bphoicon.png" alt="" style="max-width: 150px;">
         </n-flex>
         <div style="width: 800px;"><b style="font-size: 17px;">Achieved Silver Award in the Intermediate Physic
                 Challenge</b></div>
@@ -130,7 +129,7 @@ const currentImage = computed(() => AMCimages[currentIndex.value]);
                 the
                 silver award.
             </n-ellipsis>
-            <n-image width="175" src="/images/bpho.jpg"></n-image>
+            <n-image width="175" src="/website/images/bpho.jpg"></n-image>
         </n-flex>
     </div>
 </template>
